@@ -1,3 +1,74 @@
+function compareTriplets(a, b) {
+    let alicesScore = 0;
+    let bobsScore = 0;
+    const score = [];
+    for (let i = 0; i < a.length; i++) {
+        for (let j = 0; j < b.length; j++) {
+            //switch statement failed - using IF, ELSE IF, ELSE pattern
+            if (a[0] > b[0] || b[0] < a[0]) {
+                alicesScore ++;
+                console.log("Alice has scored a point!", alicesScore);
+            } else if (a[0] < b[0] || b[0] > a[0]) {
+                    bobsScore++;
+                    console.log("Bob has scores a point!", bobsScore);
+            } else {
+                if (a[0] < b[0]) {
+                    console.log('This round is a TIE!', alicesScore, bobsScore);
+                }
+            };
+
+            if (a[1] > b[1] || b[1] < a[1]) {
+              alicesScore++;
+              console.log("Alice has scored a point!", alicesScore);
+            } else if (a[1] < b[1] || b[1] > a[1]) {
+              bobsScore++;
+              console.log("Bob has scores a point!", bobsScore);
+
+            } else {
+              if (a[1] === b[1]) {
+                console.log('This round is a TIE!', alicesScore, bobsScore);
+              }
+            };
+
+            if (a[2] > b[2] || b[2] < a[2]) {
+              alicesScore++;
+              console.log("Alice has scored a point!", alicesScore);
+            } else if (a[2] < b[2] || b[2] > a[2]) {
+              bobsScore++;
+              console.log("Bob has scores a point!", bobsScore);
+
+            } else {
+              if (a[2] === b[2]) {
+                console.log('This round is a TIE!', alicesScore, bobsScore);
+              }
+            };
+      }
+  }
+    score.push(alicesScore, bobsScore);
+    // score.push(bobsScore);
+    console.log("FINAL SCORE: ", score);
+    if (alicesScore > bobsScore || bobsScore < alicesScore) {
+      console.log(`ALICE IS THE WINNER! ALICE: ${alicesScore}, BOB: ${bobsScore}`);
+    } else if (bobsScore > alicesScore || alicesScore < bobsScore) {
+      console.log(`BOB IS THE WINNER! BOB: ${bobsScore}, ALICE: ${alicesScore}`);
+    } else {
+      if (bobsScore === alicesScore) {
+        console.log('THE GAME HAS ENDED IN A TIE!  NOW WE MOVE INTO INSTANT-DEATH!');
+      }
+    }
+    return score;
+};
+
+
+console.log(compareTriplets([5,6,7], [3,6,10]));
+console.log(compareTriplets([17,28,30], [99,16,6]));
+
+
+
+
+
+
+
 const sum = (function() {
   "use strict";
   return function sum(x, y, z) {
@@ -5,7 +76,7 @@ const sum = (function() {
     return args.reduce((a, b) => a + b, 0);
   };
 })();
-console.log(sum(1, 2, 3)); // 6
+// console.log(sum(1, 2, 3)); // 6
 
 
 
@@ -21,7 +92,7 @@ const squareList = (arr) => {
 };
 // test your code
 const squaredIntegers = squareList(realNumberArray);
-console.log(squaredIntegers);
+// console.log(squaredIntegers);
 
 
 
