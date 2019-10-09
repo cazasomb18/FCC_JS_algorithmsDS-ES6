@@ -1,3 +1,77 @@
+//diagonal sum challenge - hackerRank.com
+
+let inputString = [
+  [11,2,4],
+  [4,5,6],
+  [10,8,-12]
+]
+
+let ar = inputString;
+
+console.log(ar[0][0], ar[1][1], ar[2][2]);
+console.log(ar[2][0], ar[1][1], ar[0][2]);
+//there is a relationship the diagonal numbers in the square matrix
+  //l1 === ar[0][0]
+  //r1 === ar[n-1][0]
+  //lm && rm === ar[ar.length/2 +1][ar.length/2+1] 
+  //l2 === ar[ar.length-1][ar.length-1]
+  //r2 === ar[0][ar.length-1] 
+    //we can set up a switch statement to keep track of this.
+
+function diagonalDifference(arr) {
+    //finding the median of an array;
+    // const findMedian = (num) => {
+    //     let MN = 0;
+    //     num = N;
+    //     if (num % 2 === 1){
+    //         MN = (num / 2) + 1;
+    //     } else {
+    //         MN = num / 2;
+    //     }
+    //     return MN;
+    // }
+    // findMedian();
+    // Write your code here
+
+    inputString = arr;
+
+    let N = arr.length;
+
+    let MN = 0;
+
+    if (N % 2 === 1) {
+        MN = N / 2 + 1;
+    } else {
+        if (N % 2 === 0){
+            MN = N / 2;
+        }
+        return MN;
+    };
+
+    let primaryDiagonal = arr[N-N][N-N] + arr[MN][MN] + arr[N-1][N-1];
+    //left diagonal difference
+    let secondaryDiagonal = arr[N-N][N-1] + arr[MN][MN] + arr[N-N][N-1];
+    //right diagonal difference
+    // console.log(arr[0][0], arr[0][1], arr[0][2]);
+    // console.log(arr[1][0], arr[1][1], arr[1][2]);
+    // console.log(arr[2][0], arr[2][1], arr[2][2]);
+
+
+
+    const DIFFERENCE = Math.abs(primaryDiagonal - secondaryDiagonal );
+
+    // return DIFFERENCE;
+    // console.log(arr);
+    // console.log(inputString);
+}
+
+// console.log(diagonalDifference(inputString));
+
+
+
+
+
+///challenge from hackerrank.com///second hackerrank challenge completed
 function compareTriplets(a, b) {
     let alicesScore = 0;
     let bobsScore = 0;
@@ -56,12 +130,12 @@ function compareTriplets(a, b) {
         console.log('THE GAME HAS ENDED IN A TIE!  NOW WE MOVE INTO INSTANT-DEATH!');
       }
     }
-    return score;
+    // return score;
 };
 
 
-console.log(compareTriplets([5,6,7], [3,6,10]));
-console.log(compareTriplets([17,28,30], [99,16,6]));
+// console.log(compareTriplets([5,6,7], [3,6,10]));
+// console.log(compareTriplets([17,28,30], [99,16,6]));
 
 
 
@@ -77,6 +151,18 @@ const sum = (function() {
   };
 })();
 // console.log(sum(1, 2, 3)); // 6
+
+const sumTrue = (ar) => {
+  let sum = 0;
+  for (let i = 0; i < ar.length; i++) {
+    sum += ar[i];
+  }
+  // return sum;
+}
+
+arr1 = [1,3,6,2,6,8,4,5,3,5,7,34,57234,7467,32,45,74,678634,7904];
+
+// console.log(sumTrue(arr1));
 
 
 
